@@ -40,9 +40,11 @@
     </platform>
 
     <platform name="ios">
-        <feature name="CardReader">
-            <param name="ios-package" value="DBLCard" />
-        </feature>
+    	<config-file target="config.xml" parent="/*">
+            <feature name="CardReader">
+                <param name="ios-package" value="DBLCard" />
+            </feature>
+    	</config-file>
 
         <framework src="CoreBluetooth.framework" />
         <framework src="AudioToolbox.framework" />
