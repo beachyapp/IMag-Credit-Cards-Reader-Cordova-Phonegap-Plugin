@@ -24,7 +24,7 @@ NSString * const READY_EVENT_VALUE = @"ff 00 00 00 00 00 00 00 01 00 00 00 00 00
     
 }
 
-- (void)readCreditCard:(CDVInvokedUrlCommand *)command {
+- (void)initializeCardReader:(CDVInvokedUrlCommand *)command {
     self->callbackId = command.callbackId;
     
     SwipeHandler *handler = [[SwipeHandler alloc] init];
@@ -34,6 +34,7 @@ NSString * const READY_EVENT_VALUE = @"ff 00 00 00 00 00 00 00 01 00 00 00 00 00
     [settings setSwipeHandler:handler];
     
     if ([handler isConnected] == YES) {
+        self->_connected = true;
         [handler powerOn];
     }
     
