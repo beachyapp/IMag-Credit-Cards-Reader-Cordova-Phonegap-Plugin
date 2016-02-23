@@ -8,6 +8,11 @@
 @interface DBLCard : CDVPlugin<SwipeListener>
 {}
 
-- (void)readCreditCard:(CDVInvokedUrlCommand*)command;
+- (void)initializeCardReader:(CDVInvokedUrlCommand*)command;
+- (void)readIsReady:(CDVInvokedUrlCommand*)command;
+- (void)readIsConnected:(CDVInvokedUrlCommand*)command;
+- (void)callCordova:(CDVPluginResult*)result;
+- (BOOL)isReady;
+- (BOOL)isConnected;
 
 @end
